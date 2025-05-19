@@ -92,9 +92,9 @@ class PeopleTable extends React.Component {
                 <PersonForm
                     isUpdating={this.state.isUpdating}
                     person={person}
-                    onTextChange={this.onTextChange}
                     onAddClick={this.onAddClick}
                     onCancelClick={this.onCancelClick}
+                    onTextChange={this.onTextChange}
                     onUpdateClick={this.onUpdateClick}
                 />
                 <table className="table table-hover table-striped table-bordered">
@@ -114,10 +114,10 @@ class PeopleTable extends React.Component {
                     <tbody>
                         {people.map(p => <PersonRow
                             key={p.id} person={p} 
+                            onEditClick={() => this.onEditClick(p)}
                             isChecked={checkedPeople.includes(p.id)}
                             onCheckboxClick={() => this.onCheckboxClick(p.id)}
                             onDeleteClick={() => this.onDeleteClick(p.id)}
-                            onEditClick={() => this.onEditClick(p)}
 
                         />)}
                     </tbody>
